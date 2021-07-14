@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - vim_modules:/home/docker/.vim/
+      - coc_modules:/home/docker/dotfiles/.config/coc/
+      - ./html:/var/www/html/
+      - ./php.ini:/usr/local/etc/php/php.ini
+    logging:
+      options:
+        max-size: "5mb"
+        max-file: "3"
+
+volumes:
+  vim_modules:
+  coc_modules:
