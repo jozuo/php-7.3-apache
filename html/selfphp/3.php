@@ -59,3 +59,15 @@ $data = ["apple" => "リンゴ"];
 print $data["apple"] ?? "残念"
 ?>
 </pre>
+
+<pre>
+<?php
+for ($i = 1; $i < 10; $i++) {
+    for ($j = 1; $j < 10; $j++) {
+        $result = $i * $j;
+        print "{$result} ";
+    }
+    print "\n";
+}
+?>
+</pre>
