@@ -10,9 +10,9 @@
 <body>
     <?php
     $value = $_COOKIE["value"];
-    print "このページ2のクッキー値は" . $value . "です。<br/>";
+    print "このページ2のクッキー値は「{$value}」です。<br/>";
     ?>
-    <a href="page1.php">ページ1に戻る</a>
+    <a href="cookie1.php">ページ1に戻る</a>
 </body>
 
 </html>

@@ -18,10 +18,10 @@ setcookie("value", 100);
 
 <body>
     <?php
-    $value = isset($_COOKIE["value"])  ? $_COOKIE["value"] : "";
-    print "このページ1のクッキー値は「" . $value . "」です。<br/>";
+    $value = $_COOKIE["value"] ?? "";
+    print "このページ1のクッキー値は「{$value}」です。<br/>";
     ?>
-    <a href="page2.php">ページ2</a>
+    <a href="cookie2.php">ページ2</a>
 </body>
 
 </html>
