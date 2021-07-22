@@ -63,11 +63,29 @@ print $data["apple"] ?? "残念"
 <pre>
 <?php
 for ($i = 1; $i < 10; $i++) {
-    for ($j = 1; $j < 10; $j++) {
-        $result = $i * $j;
-        print "{$result} ";
-    }
-    print "\n";
+  for ($j = 1; $j < 10; $j++) {
+    $result = $i * $j;
+    print "{$result} ";
+  }
+  print "\n";
 }
+?>
+</pre>
+
+<pre>
+<?php
+
+$value = 0;
+print "エルビス演算子(?:) " . ($value ?: "hogehoge");
+print "\n";
+print "Null合体演算子(??) :" . ($value ?? "hogehoge");
+?></pre>
+
+<pre>
+<?php
+$value = array(3 => 1);
+print "エルビス演算子(?:) " . ($value[1] ?: "hogehoge");
+print "\n";
+print "Null合体演算子(??) :" . ($value[1] ?? "hogehoge");
 ?>
 </pre>

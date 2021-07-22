@@ -28,7 +28,7 @@ print "3角形の面積は{$area}です。\n"
 <?php
 function hoge(?int $value): void
 {
-    var_dump($value);
+  var_dump($value);
 }
 
 print hoge(100);
@@ -50,9 +50,9 @@ print "菱形: {$result}"
 <?php
 function total(float ...$args): float
 {
-    return array_reduce($args, function ($result, $value) {
-        return $result += $value;
-    }, 0);
+  return array_reduce($args, function ($result, $value) {
+    return $result += $value;
+  }, 0);
 }
 
 print "トータル" . total(10, 20, 30);
@@ -63,40 +63,40 @@ print "トータル" . total(10, 20, 30);
 <?php
 function myArrayWalk(array $array, callable $func): void
 {
-    foreach ($array as $key => $value) {
-        print "key: {$key}, value: {$value}\n";
-        $func($key, $value);
-    }
+  foreach ($array as $key => $value) {
+    print "key: {$key}, value: {$value}\n";
+    $func($key, $value);
+  }
 }
 
 $data = ['apple' => 100, 'orange' => 50, 'pine' => 10, 'banana' => 5];
 $result = 0;
 myArrayWalk($data, function ($key, $value) use (&$result) {
-    $result += $value;
+  $result += $value;
 });
 
-print "トータル: {$result}";
+print "トータル2: {$result}";
 ?></pre>
 
 <pre>
 <?php
 function readLines(string $path)
 {
-    $file = fopen($path, 'rb') or die('ファイルが見つかりません');
-    while ($line = fgets($file, 1024)) {
-        yield $line;
-    }
-    fclose($file);
+  $file = fopen($path, 'rb') or die('ファイルが見つかりません');
+  while ($line = fgets($file, 1024)) {
+    yield $line;
+  }
+  fclose($file);
 }
 function readFiles(string ...$files)
 {
-    foreach ($files as $file) {
-        // `yield from`にするのが重要
-        yield from readLines($file);
-    }
+  foreach ($files as $file) {
+    // `yield from`にするのが重要
+    yield from readLines($file);
+  }
 }
 
 foreach (readFiles("2-2.php", "2-4.php") as $line) {
-    print $line;
+  print $line;
 }
 ?></pre>
