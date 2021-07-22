@@ -96,3 +96,6 @@ RUN mkdir -p ${HOME}/.vim/ \
     /var/www/html 
 VOLUME ["${HOME}/.vim/", "${HOME}/dotfiles/.config/coc/"]
 
+# php
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
