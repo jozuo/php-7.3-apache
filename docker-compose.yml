@@ -15,6 +15,15 @@ services:
         max-size: "5mb"
         max-file: "3"
 
+  db:
+    image: mariadb:10.4
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "true"
+
 volumes:
   vim_modules:
   coc_modules:
+  db_data:
