@@ -22,6 +22,7 @@ services:
       - db_data:/var/lib/mysql
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "true"
+      TZ: "Asia/Tokyo"
 
 volumes:
   vim_modules:

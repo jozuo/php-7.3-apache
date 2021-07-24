@@ -75,6 +75,9 @@ RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
  && sh /tmp/install.sh -y  \
  && rm /tmp/install.sh
 
+# timezone
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 # user
 RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
   && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd \
@@ -99,4 +102,3 @@ VOLUME ["${HOME}/.vim/", "${HOME}/dotfiles/.config/coc/"]
 
 # php
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
