@@ -78,13 +78,18 @@ RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
 # timezone
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
+# php
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN apt-get install -y default-mysql-client \
+ && docker-php-ext-install pdo_mysql
+
 # user
 RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
   && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd \
   && echo "${DOCKER_USER}   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER ${DOCKER_USER}
-ENV LANG=C.UTF-8
-ENV LANGUAGE=en_US:
+ENV LANG=ja_JP.UTF-8
+ENV LANGUAGE=ja_JP.UTF-8
 
 # dotfiles
 RUN git clone https://github.com/jozuo/dotfiles.git ${HOME}/dotfiles/ \
@@ -98,8 +103,4 @@ RUN mkdir -p ${HOME}/.vim/ \
     ${HOME}/.vim/ \
     ${HOME}/dotfiles/.config/coc/ \
     /var/www/html 
-VOLUME ["${HOME}/.vim/", "${HOME}/dotfiles/.config/coc/"]
-
-# php
-COPY --from=composer /usr/bin/composer /usr/bin/composer
-RUN sudo apt-get install -y default-mysql-client
+VOLUME ["${HOME}/.vim/", "${HOME}/dotfiles/.config/coc/", "/var/www/html"]
