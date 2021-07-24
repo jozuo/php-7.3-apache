@@ -62,12 +62,13 @@ RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
  && cd .. && rm -Rf neovim* 
 
 # util
-RUN apt-get install -y direnv fasd fzf tig zsh \
+RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
  && git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions/ \
  && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting \
  && cd /tmp \
  && wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_arm64.deb \
  && dpkg -i lsd_0.20.1_arm64.deb \
+ && rm -f lsd* \
  #
  # starship
  && curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh \
