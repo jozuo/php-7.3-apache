@@ -102,3 +102,4 @@ VOLUME ["${HOME}/.vim/", "${HOME}/dotfiles/.config/coc/"]
 
 # php
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN sudo apt-get install -y default-mysql-client
