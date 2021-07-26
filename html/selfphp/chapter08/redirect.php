@@ -8,5 +8,3 @@ $host = $_SERVER["HTTP_HOST"];
 $path = dirname($_SERVER["PHP_SELF"]);
 $url = "http://{$host}{$path}/req_headers.php";
 header("Location: {$url}");
-?>
-

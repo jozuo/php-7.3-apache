@@ -18,14 +18,14 @@ try {
     $stmt->bindParam(":published", $published);
 
     // フォームからの入力値を順にセット
-    for ($index = 1; $index <= $_POST["cnt"]; $index++) {
-        $isbn = $_POST["isbn{$index}"];
-        $title = $_POST["title{$index}"];
-        $price  = $_POST["price{$index}"];
-        $publish = $_POST["publish{$index}"];
-        $published = $_POST["published{$index}"];
-        $stmt->execute();
-    }
+  for ($index = 1; $index <= $_POST["cnt"]; $index++) {
+      $isbn = $_POST["isbn{$index}"];
+      $title = $_POST["title{$index}"];
+      $price  = $_POST["price{$index}"];
+      $publish = $_POST["publish{$index}"];
+      $published = $_POST["published{$index}"];
+      $stmt->execute();
+  }
     // 処理後は元のフォームにリダイレクト
     redirect('bind_param_form.php');
 } catch (PDOException $e) {

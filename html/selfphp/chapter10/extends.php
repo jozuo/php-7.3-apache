@@ -11,4 +11,3 @@ $person->work();
 
 $hetare = new HetareBusinessPerson('邦夫', '田中');
 $hetare->work();
-?>

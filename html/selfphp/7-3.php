@@ -23,14 +23,14 @@
       $dir = new DirectoryIterator('./');
       foreach ($dir as $file) {
         if ($file->isFile()) {
-      ?>
+          ?>
           <tr>
             <td><?= $file->getFilename(); ?></td>
             <td><?= $file->getSize(); ?>B</td>
             <td><?= date('Y/m/d H:i:s', $file->getATime()); ?></td>
             <td><?= date('Y/m/d H:i:s', $file->getMTime()); ?></td>
           </tr>
-      <?php
+          <?php
         }
       }
       ?>

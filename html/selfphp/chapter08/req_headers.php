@@ -17,12 +17,12 @@
     foreach ($_SERVER as $key => $value) {
       // キーが“HTTP_”で始まる値のみ出力
       if (strpos($key, 'HTTP_') === 0) {
-    ?>
+        ?>
         <tr valign="top">
           <th><?= e($key); ?></th>
           <td><?= e($value) ?></td>
         </tr>
-    <?php
+        <?php
       }
     }
     ?>

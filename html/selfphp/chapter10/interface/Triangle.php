@@ -20,4 +20,3 @@ class Triangle implements IFigure
     return $this->width * $this->height / 2;
   }
 }
-?>

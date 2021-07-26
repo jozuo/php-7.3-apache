@@ -10,4 +10,4 @@ use com\jozufactory\MyClass;
 print MyClass::showClass();
 print "<br>";
 print MyClass::hoge();
-?>
+

@@ -1,5 +1,4 @@
-<?declare(strict_types=1);?>
-<?php require_once __DIR__ . '/../encode.php' ?>
+<?php require_once __DIR__ . '/../encode.php'; ?>
 
 <!DOCTYPE html>
 <html lang="ja">

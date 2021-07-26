@@ -11,4 +11,3 @@ class Triangle extends FigureAbstract
     return $this->width * $this->height / 2;
   }
 }
-?>

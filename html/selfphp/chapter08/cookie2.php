@@ -20,13 +20,13 @@ if (strlen($email) > 0) {
 <body>
   <?php
   if (strlen($email) > 0) {
-  ?>
+    ?>
     クッキーを保存しました。
-  <?php
+    <?php
   } else {
-  ?>
+    ?>
     値がブランクです。
-  <?php
+    <?php
   }
   ?>
 </body>

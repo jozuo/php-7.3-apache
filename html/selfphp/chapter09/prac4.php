@@ -25,7 +25,7 @@ $title = $_POST["title"] ?? '';
   require_once __DIR__ . '/../dbmanager.php';
 
   if (isset($_POST["title"])) {
-  ?>
+    ?>
     <ul>
       <?php
       try {
@@ -34,9 +34,9 @@ $title = $_POST["title"] ?? '';
         $stmt->bindValue(':title', "%{$_POST['title']}%");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      ?>
+          ?>
           <li><?= e($row["title"]) ?></li>
-      <?php
+          <?php
         }
       } catch (PDOException $e) {
         die("エラーメッセージ: {$e->getMessage()}");

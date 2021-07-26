@@ -12,5 +12,3 @@ try {
   print "エラーコード: {$e->getCode()}<br/>";
   print "エラーメッセージ: {$e->getMessage()}<br/>";
 }
-
-?>

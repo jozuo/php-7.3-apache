@@ -44,5 +44,3 @@ $cls = new MyTrait();
 $cls->base = 10;
 $cls->height = 5;
 print $cls->getArea();
-
-?>

@@ -21,4 +21,3 @@ try {
   $db->rollBack();
   die("エラーメッセージ: {$e->getMessage()}");
 }
-?>

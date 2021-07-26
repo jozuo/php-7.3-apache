@@ -24,4 +24,3 @@ try {
 } catch (PDOException $e) {
   die("登録に失敗しました。{$e->getMessage()}");
 }
-?>

@@ -43,4 +43,4 @@ if (isset($err_msg)) {
 // 処理成功時はフォームにリダイレクト
 $url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/file1.php';
 header("Location: {$url}");
-?>
+

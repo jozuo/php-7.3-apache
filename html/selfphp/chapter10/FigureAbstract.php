@@ -15,7 +15,7 @@ abstract class FigureAbstract
     $this->height = $height;
   }
 
-  protected abstract  function getArea(): float;
+  abstract protected function getArea(): float;
 }
-?>
+
 

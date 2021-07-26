@@ -8,5 +8,3 @@ $p = new Person('太郎', '山田');
 $p->show();
 
 print_r(ini_get_all());
-
-?>

@@ -15,4 +15,3 @@ foreach ($figs as $fig) {
     print '<p>' . get_class($fig) . ":" . $fig->getArea() . '</p>';
   }
 }
-?>

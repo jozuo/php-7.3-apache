@@ -12,5 +12,3 @@ trait MachineTrait
     print $this->starting;
   }
 }
-
-?>

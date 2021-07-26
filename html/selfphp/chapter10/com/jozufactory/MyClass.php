@@ -19,4 +19,4 @@ class MyClass
     print "hoge!!<br/>";
   }
 }
-?>
+

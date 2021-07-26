@@ -23,4 +23,3 @@ foreach ($cls as $key => $value) {
 }
 print "<hr>";
 $cls->showProperty();
-?>

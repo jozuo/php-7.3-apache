@@ -27,5 +27,4 @@ $cls->execute(new class implements Runnable
   {
     print 'process...';
   }
-})
-?>
+});

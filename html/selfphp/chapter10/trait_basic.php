@@ -18,5 +18,3 @@ class Fax
 $fax = new Fax();
 $fax->run();
 $fax->send();
-
-?>

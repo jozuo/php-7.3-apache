@@ -11,4 +11,3 @@ class MyClass
 }
 
 print "value: " . MyClass::square(10, 20);
-?>

@@ -38,7 +38,7 @@ require_once __DIR__ . '/../encode.php';
           $cnt = 0;
           while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $cnt++;
-        ?>
+            ?>
             <tr>
               <td>
                 <?= e($row['isbn']) ?>
@@ -57,7 +57,7 @@ require_once __DIR__ . '/../encode.php';
                 <input type="text" name="published<?= e((string)$cnt) ?>" value="<?= e($row['published']) ?>" size="12">
               </td>
             </tr>
-        <?php
+            <?php
           }
         } catch (PDOException $e) {
           die("エラーメッセージ: {$e->getMessage()}");

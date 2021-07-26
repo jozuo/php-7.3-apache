@@ -22,4 +22,4 @@ class Book
     return (floor($this->price * (1 - $this->_rate)));
   }
 }
-?>
+

@@ -13,4 +13,3 @@ $list->add(new Person('涼太', '高橋'));
 foreach ($list as $value) {
   print $value->show();
 }
-?>

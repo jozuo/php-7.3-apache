@@ -17,7 +17,7 @@ try {
 } catch (PDOException $e) {
     die("エラーメッセージ:{$e->getMessage()}");
 } finally {
-    if ($file) {
-        fclose($file);
-    }
+  if ($file) {
+      fclose($file);
+  }
 }

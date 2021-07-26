@@ -35,4 +35,3 @@ class FaxPrinter implements IFax, IPrinter
 $fp = new FaxPrinter();
 $fp->send();
 $fp->print();
-?>

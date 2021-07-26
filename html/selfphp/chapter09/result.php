@@ -37,7 +37,7 @@ require_once __DIR__ . '/../encode.php';
         // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         foreach ($stmt as $row) {
-      ?>
+          ?>
           <tr>
             <td><?= e($row['isbn']); ?> </td>
             <td><?= e($row['title']); ?> </td>
@@ -45,7 +45,7 @@ require_once __DIR__ . '/../encode.php';
             <td><?= e($row['publish']); ?> </td>
             <td><?= e($row['published']); ?> </td>
           </tr>
-      <?php
+          <?php
         }
       } catch (PDOException $e) {
         die("エラーメッセージ: {$e->getMessage()}");

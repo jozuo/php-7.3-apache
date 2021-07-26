@@ -11,4 +11,3 @@ class BusinessPerson extends Person
     print "<p>{$this->lastName}{$this->firstName}は働いています。</p>";
   }
 }
-?>

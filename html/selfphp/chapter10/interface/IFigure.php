@@ -8,4 +8,4 @@ interface IFigure
 {
   function getArea(): float;
 }
-?>
+

@@ -12,5 +12,3 @@ class HetareBusinessPerson extends BusinessPerson
     print "ただし、ボチボチと・・・";
   }
 }
-?>
-

@@ -22,4 +22,3 @@ class MySingleton
 $c1 = MySingleton::getInstance();
 $c2 = MySingleton::getInstance();
 var_dump($c1 === $c2);
-?>

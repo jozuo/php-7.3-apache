@@ -11,4 +11,3 @@ class Square extends FigureAbstract
     return $this->width * $this->height;
   }
 }
-?>

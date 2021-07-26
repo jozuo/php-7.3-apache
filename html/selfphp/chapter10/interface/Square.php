@@ -20,4 +20,3 @@ class Square implements IFigure
     return $this->width * $this->height;
   }
 }
-?>

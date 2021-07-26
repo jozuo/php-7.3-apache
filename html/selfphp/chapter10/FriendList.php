@@ -21,4 +21,3 @@ class FriendList implements IteratorAggregate
     $this->persons[] = $person;
   }
 }
-?>
