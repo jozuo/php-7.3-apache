@@ -7,7 +7,16 @@ ARG DOCKER_PASSWORD=docker
 ARG GIT_VERSION=2.30.2
 ARG NVIM_VERSION=0.5.0
 
-RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y
+RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
+ #
+ # locale
+ && apt-get install -y locales git tig \
+ && sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen \
+ && locale-gen \
+ && update-locale LANG=ja_JP.UTF-8 \
+ #
+ # timezone
+ && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # git
 RUN apt-get install -y \
@@ -61,7 +70,7 @@ RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
  && make install \
  && cd .. && rm -Rf neovim* 
 
-# util
+# tools
 RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
  && git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions/ \
  && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting \
@@ -74,9 +83,6 @@ RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
  && curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh \
  && sh /tmp/install.sh -y  \
  && rm /tmp/install.sh
-
-# timezone
-RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # php
 COPY --from=composer /usr/bin/composer /usr/bin/composer
