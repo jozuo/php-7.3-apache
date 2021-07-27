@@ -1,0 +1,14 @@
+{
+    "autoload": {
+      "psr-4": {
+        "model\\": "model",
+        "asia\\": "asia"
+      }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "scripts": {
+      "convert": "./vendor/bin/phpcbf -q --standard=./phpcs.xml **/*.php"
+    }
+}
