@@ -87,7 +87,9 @@ RUN apt-get install -y direnv fasd fzf silversearcher-ag tig zsh \
 # php
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN apt-get install -y default-mysql-client \
- && docker-php-ext-install pdo_mysql
+ && docker-php-ext-install pdo_mysql \
+ && pecl install xdebug-2.8.1 \
+ && docker-php-ext-enable xdebug
 
 # user
 RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
