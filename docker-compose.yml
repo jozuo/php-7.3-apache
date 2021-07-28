@@ -5,6 +5,7 @@ services:
     build: .
     ports:
       - "8080:80"
+    restart: unless-stopped
     volumes:
       - vim_modules:/home/docker/.vim/
       - coc_modules:/home/docker/dotfiles/.config/coc/
