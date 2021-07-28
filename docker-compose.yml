@@ -2,7 +2,10 @@ version: "3"
 
 services:
   php:
-    build: .
+    build:
+      context: .
+      args:
+        ARCH_TYPE: "${ARCH_TYPE}"
     ports:
       - "8080:80"
       - "9000:9000"
