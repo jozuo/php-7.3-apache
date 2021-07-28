@@ -5,10 +5,12 @@ services:
     build: .
     ports:
       - "8080:80"
+      - "9000:9000"
     restart: unless-stopped
     volumes:
       - vim_modules:/home/docker/.vim/
       - coc_modules:/home/docker/dotfiles/.config/coc/
+      - ~/.ssh/:/home/docker/.ssh/
       - ./html:/var/www/html/
       - ./xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     logging:
